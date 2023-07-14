@@ -43,7 +43,7 @@ const EditPokemonForm = ({ pokemon, hideForm }) => {
       move2,
       moves: [move1, move2]
     };
-    // debugger
+  
     dispatch(updatePokemon(payload));
     
     let updatedPokemon;

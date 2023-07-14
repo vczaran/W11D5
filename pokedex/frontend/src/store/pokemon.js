@@ -54,7 +54,6 @@ export const createPokemon = (pokemon) => async dispatch => {
 };
 
 export const updatePokemon = (payload) => async dispatch => {
-  // const pokemonId = useParams();
   const response = await fetch(`/api/pokemon/${payload.number}`, {
     method: 'PUT',
     body: JSON.stringify(payload),
@@ -66,7 +65,6 @@ export const updatePokemon = (payload) => async dispatch => {
 
   if (response.ok) {
     const data = await response.json();
-    // debugger
     dispatch(addOnePokemon(data));
   }
 }
@@ -110,7 +108,6 @@ const pokemonReducer = (state = initialState, action) => {
       };
     case ADD_ONE: 
       if (!state[action.pokemon?.id]) {
-        // debugger
         const newState = {
           ...state,
           [action.pokemon.id]: action.pokemon
