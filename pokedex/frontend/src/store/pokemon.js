@@ -55,7 +55,7 @@ export const createPokemon = (pokemon) => async dispatch => {
 
 export const updatePokemon = (payload) => async dispatch => {
   // const pokemonId = useParams();
-  const response = await fetch(`/api/pokemon/${payload.pokemon.id}`, {
+  const response = await fetch(`/api/pokemon/${payload.number}`, {
     method: 'PUT',
     body: JSON.stringify(payload),
     headers: {
