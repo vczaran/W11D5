@@ -66,7 +66,8 @@ export const updatePokemon = (payload) => async dispatch => {
 
   if (response.ok) {
     const data = await response.json();
-    dispatch(addOnePokemon(data.pokemon));
+    // debugger
+    dispatch(addOnePokemon(data));
   }
 }
 
@@ -108,7 +109,8 @@ const pokemonReducer = (state = initialState, action) => {
         types: action.types
       };
     case ADD_ONE: 
-      if (!state[action.pokemon.id]) {
+      if (!state[action.pokemon?.id]) {
+        // debugger
         const newState = {
           ...state,
           [action.pokemon.id]: action.pokemon
